@@ -1,7 +1,8 @@
 ﻿{
     "version": "1.0.0-*",
     "title": "DbUp SQL CE Support",
-    "description": "DbUp makes it easy to deploy and upgrade SQL Server databases. This package adds SqlCe support.",
+    "name": "dbup4-sqlce",
+    "description": "**  Unofficial beta release of version 4.0 **\nDbUp makes it easy to deploy and upgrade SQL Server databases. This package adds SqlCe support.",
     "authors": [ "Paul Stovell", "Jim Burger", "Jake Ginnivan", "Damian Maclennan" ],
     "packOptions": {
         "projectUrl": "http://dbup.github.com",

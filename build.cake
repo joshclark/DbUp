@@ -75,14 +75,14 @@ Task("Package")
         DotNetCorePack("./src/dbup-sqlite-mono/project.json", settings);
         DotNetCorePack("./src/dbup-sqlserver/project.json", settings);
 
-	    var githubToken = Argument<string>("githubToken");
-        var releaseNotesExitCode = StartProcess(
-            @"tools\GitReleaseNotes\tools\gitreleasenotes.exe", 
-            new ProcessSettings { Arguments = ". /o artifacts/releasenotes.md /repoToken " + githubToken });
-        if (string.IsNullOrEmpty(System.IO.File.ReadAllText("./artifacts/releasenotes.md")))
-            System.IO.File.WriteAllText("./artifacts/releasenotes.md", "No issues closed since last release");
-
-        if (releaseNotesExitCode != 0) throw new Exception("Failed to generate release notes");
+//	    var githubToken = Argument<string>("githubToken");
+//        var releaseNotesExitCode = StartProcess(
+//            @"tools\GitReleaseNotes\tools\gitreleasenotes.exe", 
+//            new ProcessSettings { Arguments = ". /o artifacts/releasenotes.md /repoToken " + githubToken });
+//        if (string.IsNullOrEmpty(System.IO.File.ReadAllText("./artifacts/releasenotes.md")))
+//            System.IO.File.WriteAllText("./artifacts/releasenotes.md", "No issues closed since last release");
+//
+//        if (releaseNotesExitCode != 0) throw new Exception("Failed to generate release notes");
 
         System.IO.File.WriteAllLines(outputDir + "artifacts", new[]
         {
@@ -93,8 +93,8 @@ Task("Package")
             "sqlce:dbup-sqlce." + versionInfo.NuGetVersion + ".nupkg",
             "sqlite:dbup-sqlite." + versionInfo.NuGetVersion + ".nupkg",
             "sqlite-mono:dbup-sqlite-mono." + versionInfo.NuGetVersion + ".nupkg",
-            "sqlserver:dbup-sqlserver." + versionInfo.NuGetVersion + ".nupkg",
-            "releaseNotes:releasenotes.md"
+            "sqlserver:dbup-sqlserver." + versionInfo.NuGetVersion + ".nupkg"//,
+//            "releaseNotes:releasenotes.md"
         });
 
         if (AppVeyor.IsRunningOnAppVeyor)
