@@ -16,7 +16,7 @@
     ]
   },
   "dependencies": {
-    "dbup-core": {
+    "dbup4-core": {
       "target": "project"
     },
     "dbup-sqlserver": {

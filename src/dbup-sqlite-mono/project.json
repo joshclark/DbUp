@@ -23,7 +23,7 @@
   },
 
   "dependencies": {
-    "dbup-core": { "target": "project" }
+    "dbup4-core": { "target": "project" }
   },
 
   "frameworks": {

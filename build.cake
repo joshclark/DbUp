@@ -33,7 +33,7 @@ Task("Version")
             OutputType = GitVersionOutput.BuildServer
         });
         versionInfo = GitVersion(new GitVersionSettings{ OutputType = GitVersionOutput.Json });
-        UpdateProjectJsonVersion("dbup-core");
+        UpdateProjectJsonVersion("dbup4-core");
         UpdateProjectJsonVersion("dbup-firebird");
         UpdateProjectJsonVersion("dbup-mysql");
         UpdateProjectJsonVersion("dbup-postgresql");
@@ -66,7 +66,7 @@ Task("Package")
             NoBuild = true
         };
 
-        DotNetCorePack("./src/dbup-core/project.json", settings);
+        DotNetCorePack("./src/dbup4-core/project.json", settings);
         DotNetCorePack("./src/dbup-firebird/project.json", settings);
         DotNetCorePack("./src/dbup-mysql/project.json", settings);
         DotNetCorePack("./src/dbup-postgresql/project.json", settings);
@@ -86,14 +86,14 @@ Task("Package")
 
         System.IO.File.WriteAllLines(outputDir + "artifacts", new[]
         {
-            "core:dbup-core." + versionInfo.NuGetVersion + ".nupkg",
-            "firebird:dbup-firebird." + versionInfo.NuGetVersion + ".nupkg",
-            "mysql:dbup-mysql." + versionInfo.NuGetVersion + ".nupkg",
-            "postgresql:dbup-postgresql." + versionInfo.NuGetVersion + ".nupkg",
-            "sqlce:dbup-sqlce." + versionInfo.NuGetVersion + ".nupkg",
-            "sqlite:dbup-sqlite." + versionInfo.NuGetVersion + ".nupkg",
-            "sqlite-mono:dbup-sqlite-mono." + versionInfo.NuGetVersion + ".nupkg",
-            "sqlserver:dbup-sqlserver." + versionInfo.NuGetVersion + ".nupkg"//,
+            "core:dbup4-core." + versionInfo.NuGetVersion + ".nupkg",
+            "firebird:dbup4-firebird." + versionInfo.NuGetVersion + ".nupkg",
+            "mysql:dbup4-mysql." + versionInfo.NuGetVersion + ".nupkg",
+            "postgresql:dbup4-postgresql." + versionInfo.NuGetVersion + ".nupkg",
+            "sqlce:dbup4-sqlce." + versionInfo.NuGetVersion + ".nupkg",
+            "sqlite:dbup4-sqlite." + versionInfo.NuGetVersion + ".nupkg",
+            "sqlite-mono:dbup4-sqlite-mono." + versionInfo.NuGetVersion + ".nupkg",
+            "sqlserver:dbup4-sqlserver." + versionInfo.NuGetVersion + ".nupkg"//,
 //            "releaseNotes:releasenotes.md"
         });
 

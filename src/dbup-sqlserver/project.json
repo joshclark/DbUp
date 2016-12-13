@@ -14,7 +14,7 @@
         "keyFile": "../dbup.snk"
     },
     "dependencies": {
-        "dbup-core": { "target": "project" }
+        "dbup4-core": { "target": "project" }
     },
     "frameworks": {
         "netstandard1.3": {

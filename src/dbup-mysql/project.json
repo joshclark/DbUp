@@ -15,7 +15,7 @@
     },
 
     "dependencies": {
-        "dbup-core": { "target": "project" },
+        "dbup4-core": { "target": "project" },
         "MySql.Data": "6.9.5"
     },
 
